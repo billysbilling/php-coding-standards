@@ -1,0 +1,10 @@
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+    parallel:
+        maximumNumberOfProcesses: 4
+    extensions:
+            - phpstan/phpstan-deprecation-rules
+            - phpstan/phpstan-strict-rules

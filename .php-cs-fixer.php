@@ -2,75 +2,46 @@
 
 declare(strict_types=1);
 
-$rules = [
-    // PSR Standards
+return [
     '@PSR12' => true,
-
-    // Formatting and Syntax
     'array_syntax' => ['syntax' => 'short'],
-    'binary_operator_spaces' => ['default' => 'single_space'],
-    'braces' => true,
-    'cast_spaces' => true,
-    'method_chaining_indentation' => true,
-    'ternary_to_null_coalescing' => true,
-    'concat_space' => ['spacing' => 'none'],
-
-    // Spacing and Blank Lines
-    'blank_line_after_namespace' => true,
-    'blank_line_after_opening_tag' => true,
-    'blank_line_before_statement' => ['statements' => ['return']],
-    'no_extra_blank_lines' => [
-        'tokens' => [
-            'extra', 'break', 'continue', 'curly_brace_block', 'parenthesis_brace_block',
-            'return', 'square_brace_block', 'throw', 'use', 'use_trait',
-        ],
+    'braces_position' => [
+        'allow_single_line_anonymous_functions' => false,
+        'allow_single_line_empty_anonymous_classes' => false,
+        'classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+        'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+        'control_structures_opening_brace' => 'same_line',
     ],
-    'no_whitespace_in_blank_line' => true,
-    'no_spaces_inside_parenthesis' => true,
-
-    // Typing and Casting
-    'nullable_type_declaration_for_default_null_value' => true,
+    'class_attributes_separation' => [
+        'elements' => ['method' => 'one', 'property' => 'one', 'const' => 'one', 'trait_import' => 'one'],
+    ],
+    'constant_case' => ['case' => 'lower'],
+    'declare_parentheses' => true,
     'declare_strict_types' => true,
+    'global_namespace_import' => ['import_constants' => true],
     'modernize_types_casting' => true,
+    'native_constant_invocation' => true,
+    'no_alias_functions' => true,
+    'no_extra_blank_lines' => ['tokens' => ['extra', 'break', 'continue', 'return', 'throw']],
+    'no_trailing_whitespace' => true,
+    'normalize_index_brace' => true,
+    'nullable_type_declaration_for_default_null_value' => true,
+    'ordered_imports' => ['sort_algorithm' => 'alpha'],
+    'phpdoc_add_missing_param_annotation' => true,
+    'phpdoc_align' => ['align' => 'vertical'],
+    'phpdoc_no_empty_return' => true,
+    'phpdoc_no_useless_inheritdoc' => true,
+    'phpdoc_order' => true,
+    'phpdoc_separation' => true,
+    'phpdoc_summary' => true,
+    'phpdoc_trim' => true,
+    'self_static_accessor' => true,
+    'simplified_null_return' => true,
+    'single_blank_line_at_eof' => true,
     'strict_comparison' => true,
     'strict_param' => true,
+    'ternary_operator_spaces' => true,
+    'ternary_to_null_coalescing' => true,
+    'trim_array_spaces' => true,
     'void_return' => true,
-
-    // Classes and Methods
-    'class_attributes_separation' => ['elements' => ['method' => 'one']],
-    'class_definition' => true,
-    'visibility_required' => ['elements' => ['method', 'property', 'const']],
-    'method_argument_space' => true,
-
-    // Constants and Functions
-    'constant_case' => ['case' => 'upper'],
-    'native_constant_invocation' => true,
-    'native_function_casing' => true,
-    'global_namespace_import' => ['import_constants' => true],
-
-    // PHPDoc
-    'phpdoc_add_missing_param_annotation' => true,
-    'phpdoc_order' => true,
-    'phpdoc_no_empty_return' => true,
-    'phpdoc_no_useless_inherit' => true,
-    'phpdoc_align' => ['align' => 'vertical'],
-    'no_superfluous_phpdoc_tags' => ['remove_inheritdoc' => true],
-    'phpdoc_scalar' => true,
-
-    // Clean-up
-    'no_unused_imports' => true,
-    'no_unused_local_variables' => true,
-    'no_useless_else' => true,
-    'no_duplicate_imports' => true,
-
-    // Tags
-    'php_tag_syntax' => ['short' => false],
-
-    // Deprecated Functions
-    'no_alias_functions' => true,
-
-    // Optional Grouping
-    'group_import' => true,
 ];
-
-return $rules;

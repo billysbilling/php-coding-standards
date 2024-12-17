@@ -42,6 +42,10 @@ return [
     'strict_param' => true,
     'ternary_operator_spaces' => true,
     'ternary_to_null_coalescing' => true,
+    'trailing_comma_in_multiline' => [
+        'after_heredoc' => true,
+        'elements' => ['arrays', 'arguments', 'parameters'],
+    ],
     'trim_array_spaces' => true,
     'void_return' => true,
 ];

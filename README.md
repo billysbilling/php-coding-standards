@@ -6,8 +6,8 @@ This document describes the coding standards for PHP code written by Ageras ApS.
 ## Table of Contents
 1. [Installation](#installation)
 2. [Configuration](#configuration)
-    1. [PHP CS Fixer Configuration](#php-cs-fixer-configuration)
-    2. [PHPStan Configuration](#phpstan-configuration)
+   - [PHP CS Fixer Configuration](#php-cs-fixer-configuration)
+   - [PHPStan Configuration](#phpstan-configuration)
 3. [Usage](#usage)
 4. [License](#license)
 ---
@@ -57,36 +57,44 @@ To use the default PHP CS Fixer configuration provided by Ageras ApS, create a `
 
 declare(strict_types=1);
 
-$finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__)
-    ->exclude(['vendor']); // Exclude directories like vendor or legacy folders
+use BillysBilling\PhpCodingStandards\PhpCsFixerConfig;
 
-$config = new PhpCsFixer\Config();
+$config = new PhpCsFixerConfig();
 
-// Import default rules from the package
-$rules = require 'vendor/billysbilling/php-coding-standards/.php-cs-fixer.php';
+// Exclude directories like vendor or legacy folders
+$finder = PhpCsFixer\Finder::create()->in(__DIR__)->exclude(['vendor']);
+$config->setFinder($finder);
 
-return $config
-    ->setFinder($finder)
-    ->setRules($rules)
-    ->setRiskyAllowed(true)
-    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
-    ->setCacheFile(__DIR__.'/.php-cs-fixer.cache')
-    ->setUsingCache(true);
+return $config;
 ```
 
 #### Relaxing Rules Temporarily
 
 If you need to temporarily relax certain rules to support legacy code or incremental adoption, you can modify the `$rules` array:
 ```php
-// Example: Temporarily relax some rules
+<?php
+
+declare(strict_types=1);
+
+use BillysBilling\PhpCodingStandards\PhpCsFixerConfig;
+
+$config = new PhpCsFixerConfig();
+
+$finder = PhpCsFixer\Finder::create()->in(__DIR__)->exclude(['vendor']);
+$config->setFinder($finder);
+
+// Temporary relaxation of the rules
+$rules = $config->getRules();
 $rules['declare_strict_types'] = false;
 $rules['modernize_types_casting'] = false;
-$rules['native_constant_invocation'] = false;
+$rules['native_constant_invocation']  = false;
 $rules['no_alias_functions'] = false;
 $rules['strict_comparison'] = false;
 $rules['strict_param'] = false;
 $rules['void_return'] = false;
+$config->setRules($rules);
+
+return $config;
 ```
 **Note**: Temporarily relaxing rules is intended for incremental migration of legacy code. Plan to re-enable these rules as you clean up the codebase.
 

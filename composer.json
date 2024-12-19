@@ -2,9 +2,8 @@
     "name": "billysbilling/php-coding-standards",
     "description": "Ageras ApS PHP Coding Standards",
     "type": "library",
-    "version": "1.0.0",
     "license": "proprietary",
-    "minimum-stability": "stable",
+    "version": "1.0.0",
     "keywords": ["dev", "static analysis", "formatting", "phpstan", "phpcs"],
     "require": {
         "php": ">=8.0",
@@ -12,5 +11,14 @@
         "friendsofphp/php-cs-fixer": "^3.65",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BillysBilling\\PhpCodingStandards\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
     }
 }

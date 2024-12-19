@@ -34,7 +34,7 @@ Add the following scripts to the `scripts` section of your `composer.json` file 
   "scripts": {
     "csfixer:fix": "vendor/bin/php-cs-fixer fix",
     "csfixer:check": "vendor/bin/php-cs-fixer fix --dry-run -vv",
-    "phpstan:analyse": "vendor/bin/phpstan analyse"
+    "phpstan:analyse": "vendor/bin/phpstan analyse --memory-limit=1G"
   }
 }
 ```

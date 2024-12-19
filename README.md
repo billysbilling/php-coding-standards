@@ -33,7 +33,7 @@ Add the following scripts to the `scripts` section of your `composer.json` file 
 {
   "scripts": {
     "csfixer:fix": "vendor/bin/php-cs-fixer fix",
-    "csfixer:check": "vendor/bin/php-cs-fixer fix --dry-run -vvv",
+    "csfixer:check": "vendor/bin/php-cs-fixer fix --dry-run -vv",
     "phpstan:analyse": "vendor/bin/phpstan analyse"
   }
 }

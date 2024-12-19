@@ -3,5 +3,6 @@ includes:
     - %rootDir%/../../phpstan/phpstan-strict-rules/rules.neon
 parameters:
     level: max
+    memoryLimit: 1G
     parallel:
         maximumNumberOfProcesses: 4

@@ -16,14 +16,14 @@ This document describes the coding standards for PHP code written by Ageras ApS.
 
 To install the coding standards, run the following command:
 ```bash
-composer require ageras/php-coding-standards --dev
+composer require billysbilling/php-coding-standards --dev
 ```
 
 ### Versioning
 
 Make sure to require a specific version of the package to maintain stability in your project. For example:
 ```bash
-composer require ageras/php-coding-standards:^1.0 --dev
+composer require billysbilling/php-coding-standards:^1.0 --dev
 ```
 
 ### Composer Scripts
@@ -109,14 +109,14 @@ The default PHPStan configuration provided by Ageras ApS enforces strong static 
 Create a `phpstan.neon` file in the root directory of your project:
 ```neon
 includes:
-    - vendor/ageras/php-coding-standards/phpstan.neon
+    - vendor/billysbilling/php-coding-standards/phpstan.neon
 ```
 
 #### Relaxing Rules Temporarily
 
 ```neon
 includes:
-    - vendor/ageras/php-coding-standards/phpstan.neon
+    - vendor/billysbilling/php-coding-standards/phpstan.neon
 
 parameters:
     level: max # Maximum analysis level for strict checks
@@ -145,7 +145,7 @@ This will save all current errors to `phpstan-baseline.neon`.
 Include the generated baseline in your `phpstan.neon` file:
 ```neon
 includes:
-    - vendor/ageras/php-coding-standards/phpstan.neon
+    - vendor/billysbilling/php-coding-standards/phpstan.neon
     - phpstan-baseline.neon
 ```
 **Note**: The baseline file serves as a temporary solution. You should gradually address the errors listed in the baseline to achieve full compliance.

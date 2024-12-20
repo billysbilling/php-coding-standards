@@ -24,7 +24,7 @@ class PhpCsFixerConfig extends Config
                 'control_structures_opening_brace' => 'same_line',
             ],
             'class_attributes_separation' => [
-                'elements' => ['method' => 'one', 'property' => 'one', 'const' => 'one', 'trait_import' => 'one'],
+                'elements' => ['method' => 'one', 'property' => 'one', 'const' => 'one', 'trait_import' => 'none'],
             ],
             'constant_case' => ['case' => 'lower'],
             'declare_parentheses' => true,

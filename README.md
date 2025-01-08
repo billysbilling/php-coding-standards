@@ -3,6 +3,8 @@ Ageras ApS PHP Coding Standards
 
 This document describes the coding standards for PHP code written by Ageras ApS.
 
+At Ageras ApS, we aim to maintain high-quality, consistent, and maintainable PHP code. These coding standards ensure compliance with PSR-12 and leverage modern tools to enhance code reliability and developer productivity.
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Configuration](#configuration)
@@ -34,7 +36,8 @@ Add the following scripts to the `scripts` section of your `composer.json` file 
   "scripts": {
     "csfixer:fix": "vendor/bin/php-cs-fixer fix",
     "csfixer:check": "vendor/bin/php-cs-fixer fix --dry-run -vv",
-    "phpstan:analyse": "vendor/bin/phpstan analyse --memory-limit=1G"
+    "phpstan:analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+    "phpstan:generate-baseline": "vendor/bin/phpstan analyse --generate-baseline --memory-limit=1G"
   }
 }
 ```
@@ -138,7 +141,7 @@ When working with legacy codebases, you may encounter many errors during static 
 
 Run the following command to generate a `phpstan-baseline.neon` file:
 ```bash
-vendor/bin/phpstan analyse --generate-baseline
+composer phpstan:generate-baseline
 ```
 This will save all current errors to `phpstan-baseline.neon`.
 
@@ -177,6 +180,14 @@ Perform static analysis to detect bugs, potential issues, or deviations from cod
 composer phpstan:analyse
 ```
 This command runs PHPStan to analyze the codebase and report any errors or inconsistencies.
+
+### Static Code Baseline Generation
+
+Generate a baseline file for PHPStan to temporarily ignore existing issues in the codebase. This is especially useful for legacy projects:
+```bash
+composer phpstan:generate-baseline
+```
+This command runs PHPStan with the `--generate-baseline` option and creates a `phpstan-baseline.neon` file to record the current issues.
 
 ---
 

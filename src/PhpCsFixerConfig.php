@@ -16,6 +16,7 @@ class PhpCsFixerConfig extends Config
         $this->setRules([
             '@PSR12' => true,
             'array_syntax' => ['syntax' => 'short'],
+            'blank_line_before_statement' => ['statements' => ['return']],
             'braces_position' => [
                 'allow_single_line_anonymous_functions' => false,
                 'allow_single_line_empty_anonymous_classes' => false,

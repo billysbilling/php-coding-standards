@@ -3,7 +3,6 @@
     "description": "Ageras ApS PHP Coding Standards",
     "type": "library",
     "license": "proprietary",
-    "version": "1.0.0",
     "keywords": ["dev", "static analysis", "formatting", "phpstan", "phpcs"],
     "require": {
         "php": ">=8.0",

@@ -1,6 +1,6 @@
 {
     "name": "billysbilling/php-coding-standards",
-    "description": "Ageras ApS PHP Coding Standards",
+    "description": "Ageras PHP Coding Standards",
     "type": "library",
     "license": "proprietary",
     "keywords": ["dev", "static analysis", "formatting", "phpstan", "phpcs"],

@@ -1,9 +1,9 @@
-Ageras ApS PHP Coding Standards
+Ageras PHP Coding Standards
 ==============================
 
-This document describes the coding standards for PHP code written by Ageras ApS.
+This document describes the coding standards for PHP code written by Ageras.
 
-At Ageras ApS, we aim to maintain high-quality, consistent, and maintainable PHP code. These coding standards ensure compliance with PSR-12 and leverage modern tools to enhance code reliability and developer productivity.
+At Ageras, we aim to maintain high-quality, consistent, and maintainable PHP code. These coding standards ensure compliance with PSR-12 and leverage modern tools to enhance code reliability and developer productivity.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -47,14 +47,14 @@ Add the following scripts to the `scripts` section of your `composer.json` file 
 
 ### PHP CS Fixer Configuration
 
-The default PHP CS Fixer configuration provided by Ageras ApS ensures compliance with PSR-12 and enforces modern PHP coding standards. It includes rules such as:
+The default PHP CS Fixer configuration provided by Ageras ensures compliance with PSR-12 and enforces modern PHP coding standards. It includes rules such as:
 - **Array syntax**: Short array syntax `[]` instead of `array()`.
 - **Strict typing**: Enables strict types for all files.
 - **Modernizations**: Removes legacy function aliases and uses modern casting.
 
 #### Default Configuration
 
-To use the default PHP CS Fixer configuration provided by Ageras ApS, create a `.php-cs-fixer.php` file in the root directory of your project with the following content:
+To use the default PHP CS Fixer configuration provided by Ageras, create a `.php-cs-fixer.php` file in the root directory of your project with the following content:
 ```php
 <?php
 
@@ -105,7 +105,7 @@ return $config;
 
 ### PHPStan Configuration
 
-The default PHPStan configuration provided by Ageras ApS enforces strong static analysis to detect errors, bugs and coding standard violations.
+The default PHPStan configuration provided by Ageras enforces strong static analysis to detect errors, bugs and coding standard violations.
 
 #### Default Configuration
 
@@ -159,7 +159,7 @@ includes:
 
 ### Fix Code Style Issues
 
-Automatically fix code style violations based on Ageras ApS PHP Coding Standards:
+Automatically fix code style violations based on Ageras PHP Coding Standards:
 ```bash
 composer csfixer:fix
 ```

@@ -36,6 +36,7 @@ class PhpCsFixerConfig extends Config
             'no_alias_functions' => true,
             'no_extra_blank_lines' => ['tokens' => ['extra', 'break', 'continue', 'return', 'throw']],
             'no_trailing_whitespace' => true,
+            'no_unused_imports' => true,
             'normalize_index_brace' => true,
             'nullable_type_declaration_for_default_null_value' => true,
             'ordered_imports' => ['sort_algorithm' => 'alpha'],

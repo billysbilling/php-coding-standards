@@ -36,8 +36,8 @@ Add the following scripts to the `scripts` section of your `composer.json` file 
   "scripts": {
     "csfixer:fix": "vendor/bin/php-cs-fixer fix",
     "csfixer:check": "vendor/bin/php-cs-fixer fix --dry-run -vv",
-    "phpstan:analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
-    "phpstan:generate-baseline": "vendor/bin/phpstan analyse --generate-baseline --memory-limit=1G"
+    "phpstan:analyse": "php -d memory_limit=-1 vendor/bin/phpstan analyse --memory-limit=-1",
+    "phpstan:generate-baseline": "php -d memory_limit=-1 vendor/bin/phpstan analyse --generate-baseline --memory-limit=-1"
   }
 }
 ```

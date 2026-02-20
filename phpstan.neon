@@ -5,3 +5,16 @@ parameters:
     level: max
     parallel:
         maximumNumberOfProcesses: 4
+services:
+    -
+        class: BillysBilling\PhpCodingStandards\PhpStanRules\InterfaceNamingRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: BillysBilling\PhpCodingStandards\PhpStanRules\AbstractClassNamingRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: BillysBilling\PhpCodingStandards\PhpStanRules\TraitNamingRule
+        tags:
+            - phpstan.rules.rule
